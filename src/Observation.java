@@ -4,12 +4,12 @@ import java.util.Arrays;
 public class Observation extends ArrayList<Double> {
     public static int lp;
     private String name;
-    private boolean isTestSet;
+
     private ArrayList <Double> listOfParamets = new ArrayList();
 
-    public Observation(boolean isTestSet, String name, double ... x) {
+    public Observation(String name, double ... x) {
         this.name = name;
-        this.isTestSet = isTestSet;
+
         for (int i = 0; i <x.length; i++) {
             listOfParamets.add(x[i]);
         }
@@ -31,7 +31,8 @@ public class Observation extends ArrayList<Double> {
     public String toString(){
         ArrayList <Double> toPrint = getListOfParamets();
         for (int i = 0; i < toPrint.size(); i++) {
-            System.out.print(toPrint.get(i));
+            System.out.print(toPrint.get(i) + " ");
+
         }
         return "";
     }
