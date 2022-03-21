@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-import java.util.Arrays;
+
 
 public class Observation extends ArrayList<Double> {
     public static int lp;
@@ -26,6 +26,9 @@ public class Observation extends ArrayList<Double> {
 
     public ArrayList<Double> getListOfParamets() {
         return listOfParamets;
+    }
+    public double getXParameter(int x){
+        return getListOfParamets().get(x);
     }
 
     public String toString(){

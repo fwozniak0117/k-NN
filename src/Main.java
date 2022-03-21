@@ -1,15 +1,13 @@
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
         ArrayList<Observation> testSet = readAndCreateObs("Test-set.txt");
         ArrayList<Observation> trainSet = readAndCreateObs("Train-set.txt");
 
-
+        classify(0, testSet.get(0),trainSet);
 
 
 
@@ -37,10 +35,17 @@ public class Main {
     }
     public static String classify (int k, Observation obs, ArrayList<Observation> trainSet){
         double [] parameters = new double[obs.getListOfParamets().size()];
-        ArrayList <double> diffs = new ArrayList<double>();
+        Map <Double,String> diffMap = new HashMap<>();
         for (int i = 0; i < parameters.length ; i++)
             parameters[i] = obs.getListOfParamets().get(i);
 
-        
+
+            for (int i = 0; i <trainSet.size() ; i++) {
+                    double diff = 0;
+                diff += Math.sqrt(Math.pow(parameters[i] - trainSet.get(i).getXParameter(i), 2));
+            }
+                
+
+        return "";
     }
 }
