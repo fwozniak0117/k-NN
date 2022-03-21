@@ -30,6 +30,9 @@ public class Observation extends ArrayList<Double> {
     public double getXParameter(int x){
         return getListOfParamets().get(x);
     }
+    public int getNumOfParameters (){
+       return listOfParamets.size();
+    }
 
     public String toString(){
         ArrayList <Double> toPrint = getListOfParamets();
